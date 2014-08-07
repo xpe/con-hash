@@ -26,9 +26,8 @@ takes two arguments, an item hashing function and a node hashing function.
 (def chf (consistent-hash-fn hash hash))
 ```
 
-This gives `chf`, a reusable consistent hashing function. (Due to careful
-thinking and painstaking effort, all of this possible without employing a
-class called `AbstractConsistentHashingFunctionFactory`.)
+This gives `chf`, a reusable consistent hashing function. (Yes, this is
+possible without using an `AbstractConsistentHashingFunctionFactory`.)
 
 [1]: https://en.wikipedia.org/wiki/MurmurHash
 
