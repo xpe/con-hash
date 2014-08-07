@@ -20,7 +20,9 @@ provide a consistent hash given these bits of information:
 ```
 
 First, create a consistent hashing function using `consistent-hash-fn`. It
-takes two arguments, an item hashing function and a node hashing function.
+takes two arguments, an item hashing function and a node hashing function. For
+this example, we'll use the `hash` function. As of Clojure 1.6, `hash` uses
+[Murmur hashing][1].
 
 ```clj
 (def chf (consistent-hash-fn hash hash))
@@ -52,8 +54,6 @@ Here is how you use the hashing function:
 
 According to [Consistent Hashing by Tom White][2], "for consistent hashing to
 be effective, it is important to have a hash function that [mixes][3] well."
-For this example, we'll use the `hash` function. As of Clojure 1.6, `hash`
-uses [Murmur hashing][1].
 
 As you can see above, using `hash` is not mixing well for the above inputs.
 
