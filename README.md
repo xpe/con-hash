@@ -15,6 +15,12 @@ provide a consistent hash given these bits of information:
 
 ## Usage
 
+Add this to your `project.clj` dependencies:
+
+```clojure
+[con-hash "0.1.0"]
+```
+
 ```clj
 (require '[con-hash.core :refer [consistent-hash-fn]])
 ```

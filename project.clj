@@ -1,4 +1,4 @@
-(defproject con-hash "0.1.0-SNAPSHOT"
+(defproject con-hash "0.1.0"
   :description "Consistent hashing in Clojure."
   :url "http://github.com/bluemont/con-hash"
   :license {:name "Eclipse Public License"
@@ -8,4 +8,3 @@
   {:dev
    {:source-paths ["dev"]
     :dependencies [[org.clojure/tools.namespace "0.2.5"]]}})
-
