@@ -1,8 +1,8 @@
 # con-hash
 
-A basic Clojure implementation of [consistent hashing][1].
+A basic Clojure implementation of [consistent hashing][CH].
 
-[1]: https://en.wikipedia.org/wiki/Consistent_hashing
+[CH]: http://en.wikipedia.org/wiki/Consistent_hashing
 
 Not all implementations of consistent hashing are the same. This one
 is probably one of the simpler ones you'll find. It is designed to
@@ -28,7 +28,9 @@ Add this to your `project.clj` dependencies:
 First, create a consistent hashing function using `consistent-hash-fn`. It
 takes two arguments, an item hashing function and a node hashing function. For
 this example, we'll use the `hash` function. As of Clojure 1.6, `hash` uses
-[Murmur hashing][1].
+[Murmur hashing][MH].
+
+[MH]: https://en.wikipedia.org/wiki/MurmurHash
 
 ```clj
 (def chf (consistent-hash-fn hash hash))
@@ -36,12 +38,6 @@ this example, we'll use the `hash` function. As of Clojure 1.6, `hash` uses
 
 This gives `chf`, a reusable consistent hashing function. (Yes, this is
 possible without using an `AbstractConsistentHashingFunctionFactory`.)
-
-[1]: https://en.wikipedia.org/wiki/MurmurHash
-
-[2]: https://weblogs.java.net/blog/tomwhite/archive/2007/11/consistent_hash.html
-
-[3]: http://problemsworthyofattack.blogspot.com/2007/10/mixing-with-md5.html
 
 Here is how you use the hashing function:
 
@@ -58,8 +54,12 @@ Here is how you use the hashing function:
 (chf "9I" nodes) ; "N3"
 ```
 
-According to [Consistent Hashing by Tom White][2], "for consistent hashing to
-be effective, it is important to have a hash function that [mixes][3] well."
+According to [Consistent Hashing by Tom White][CHbTW], "for consistent hashing to
+be effective, it is important to have a hash function that [mixes][mix] well."
+
+[CHbTW]: https://weblogs.java.net/blog/tomwhite/archive/2007/11/consistent_hash.html
+
+[mix]: http://problemsworthyofattack.blogspot.com/2007/10/mixing-with-md5.html
 
 As you can see above, using `hash` is not mixing well for the above inputs.
 
