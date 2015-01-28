@@ -21,7 +21,7 @@
 (defn consistent-hash-fn
   "Returns a consistent hash function for a given item hashing
   function and node hashing function. The returned function accepts
-  an items and sequence of nodes and returns one of the nodes."
+  an item and sequence of nodes and returns one of the nodes."
   [item-hash-fn node-hash-fn]
   {:pre [(fn? item-hash-fn) (fn? node-hash-fn)]}
   (fn [item nodes]
